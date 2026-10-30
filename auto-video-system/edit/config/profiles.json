@@ -1,0 +1,106 @@
+{
+ "comment": "Cut profiles. family_weights bias the matcher toward a lead family; every profile still honors the brand rules baked into match_plan.py (hook gets hero, PRODUCT never hooks, PRODUCT concludes). STOCK is hard-barred from hook AND conclusion in every profile (forbid_hook_families / forbid_conclusion_families) -- brand-critical: those slots belong to Matthew's own footage and the product, never to fetched filler b-roll. STOCK also never appears in family_weights, so the affinity term defaults it to the generic UNKNOWN-family weight (0.3) -- stock is filler, not a lead family any profile should reach for.",
+ "profiles": {
+  "portrait_led": {
+   "family_weights": {
+    "PORTRAIT": 1.0,
+    "DESK": 0.75,
+    "PRODUCT": 0.7,
+    "FEET": 0.65,
+    "MOVEMENT": 0.65
+   },
+   "forbid_hook_families": [
+    "PRODUCT",
+    "STOCK"
+   ],
+   "conclusion_family": "PRODUCT",
+   "forbid_conclusion_families": [
+    "STOCK"
+   ],
+   "caption_preset": "clean",
+   "platform": "engine_default"
+  },
+  "work_led": {
+   "family_weights": {
+    "DESK": 1.0,
+    "MOVEMENT": 0.75,
+    "PORTRAIT": 0.65,
+    "PRODUCT": 0.7,
+    "FEET": 0.6
+   },
+   "forbid_hook_families": [
+    "PRODUCT",
+    "STOCK"
+   ],
+   "conclusion_family": "PRODUCT",
+   "forbid_conclusion_families": [
+    "STOCK"
+   ],
+   "caption_preset": "clean",
+   "platform": "engine_default"
+  },
+  "product_led": {
+   "family_weights": {
+    "PRODUCT": 1.0,
+    "DESK": 0.5,
+    "PORTRAIT": 0.4,
+    "FEET": 0.6,
+    "MOVEMENT": 0.4
+   },
+   "forbid_hook_families": [
+    "STOCK"
+   ],
+   "conclusion_family": "PRODUCT",
+   "forbid_conclusion_families": [
+    "STOCK"
+   ],
+   "caption_preset": "wordpop",
+   "platform": "engine_default"
+  },
+  "feet_move_led": {
+   "family_weights": {
+    "FEET": 1.0,
+    "MOVEMENT": 0.95,
+    "PORTRAIT": 0.6,
+    "DESK": 0.6,
+    "PRODUCT": 0.7
+   },
+   "forbid_hook_families": [
+    "PRODUCT",
+    "STOCK"
+   ],
+   "conclusion_family": "PRODUCT",
+   "forbid_conclusion_families": [
+    "STOCK"
+   ],
+   "caption_preset": "wordpop",
+   "platform": "engine_default"
+  },
+  "text_on_black": {
+   "text_on_black": true,
+   "card_style": "default",
+   "caption_preset": "clean",
+   "platform": "engine_default"
+  },
+  "montage": {
+   "comment": "music-led b-roll montage, no VO lead; use with --music",
+   "family_weights": {
+    "PRODUCT": 1.0,
+    "FEET": 0.8,
+    "MOVEMENT": 0.8,
+    "DESK": 0.5,
+    "PORTRAIT": 0.4
+   },
+   "forbid_hook_families": [
+    "STOCK"
+   ],
+   "conclusion_family": "PRODUCT",
+   "forbid_conclusion_families": [
+    "STOCK"
+   ],
+   "caption_preset": "wordpop",
+   "platform": "engine_default",
+   "music_lufs": -16
+  }
+ }
+}

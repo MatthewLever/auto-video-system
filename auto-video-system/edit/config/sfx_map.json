@@ -1,0 +1,21 @@
+{
+ "comment": "DIEGETIC sfx mapping. Content-word -> Openverse search query. Keys are matched against a shot's own catalog tags (his footage) or its stock category/alt-text words (Pexels stock) -- NEVER against cut timing. This is intentionally a flat, auditable table, not code: every content-word this engine will ever attach a sound to is listed here, once. An unmapped tag must yield NO sfx, never a guess -- see lib/sfx_match.py:resolve(). First key (in this file's order) that matches a shot's word set wins, so keep more specific words above more general ones if they could both fire on the same shot (e.g. 'ocean' before 'water').",
+ "map": [
+  {"words": ["door"], "query": "door"},
+  {"words": ["creek", "stream", "brook"], "query": "creek"},
+  {"words": ["rain", "raindrop", "raindrops", "rainfall"], "query": "rain"},
+  {"words": ["ocean", "wave", "waves", "surf", "sea"], "query": "ocean waves"},
+  {"words": ["water"], "query": "water"},
+  {"words": ["wind", "windy"], "query": "wind"},
+  {"words": ["city", "street", "traffic", "cars"], "query": "city traffic"},
+  {"words": ["footsteps", "footstep", "walking", "steps"], "query": "footsteps"},
+  {"words": ["keyboard", "typing", "type"], "query": "keyboard typing"},
+  {"words": ["paper", "papers", "page", "pages"], "query": "paper"},
+  {"words": ["box", "boxes", "cardboard"], "query": "cardboard box"},
+  {"words": ["fabric", "cloth", "textile"], "query": "fabric rustle"},
+  {"words": ["machine", "motor", "printer", "printing"], "query": "machine motor"},
+  {"words": ["birds", "bird", "birdsong"], "query": "birds"},
+  {"words": ["fire", "flame", "flames", "campfire"], "query": "fire crackle"},
+  {"words": ["laugh", "laughing", "laughter"], "query": "laugh"}
+ ]
+}

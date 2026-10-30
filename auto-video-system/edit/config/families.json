@@ -1,0 +1,55 @@
+{
+ "comment": "Folder-name pattern -> setup family (first match wins, case-insensitive). Matches his real folder conventions: FOUNDER_WEEK setups 1-5, '8:13 shoot' Block dirs, Real Flip Vids. STOCK pattern is listed FIRST and deliberately narrow (^stock[_-]) so it only ever matches library dirs this engine itself creates (lib/fetch_assets.py writes to <root>/video/stock_<category>/) -- it must win before 'block'/'setup' style patterns could ever coincidentally match a stock dir name.",
+ "patterns": [
+  [
+   "^stock[_-]",
+   "STOCK"
+  ],
+  [
+   "portrait|setup ?1|block ?1",
+   "PORTRAIT"
+  ],
+  [
+   "desk|work|setup ?2|block ?2",
+   "DESK"
+  ],
+  [
+   "product|table|setup ?3|block ?3|real ?flip|realflip",
+   "PRODUCT"
+  ],
+  [
+   "feet|grid|floor|setup ?4|block ?4",
+   "FEET"
+  ],
+  [
+   "move|walk|setup ?5|block ?5",
+   "MOVEMENT"
+  ],
+  [
+   "block ?6",
+   "DESK"
+  ],
+  [
+   "block ?7",
+   "MOVEMENT"
+  ],
+  [
+   "broll|b-roll",
+   "PRODUCT"
+  ]
+ ],
+ "scale": {
+  "PORTRAIT": "MCU",
+  "DESK": "MS",
+  "PRODUCT": "CU",
+  "FEET": "WS",
+  "MOVEMENT": "WS",
+  "STOCK": "WS",
+  "UNKNOWN": "MS"
+ },
+ "white_sweep": [
+  "PRODUCT",
+  "STOCK"
+ ],
+ "white_sweep_comment": "STOCK measured, not assumed: research/g/texture_test fixtures show a legitimately in-category bright/hazy sky or ocean-glare texture clip (luma median ~248, clip-frac 0.574) collapses to the SAME order of magnitude generic exposure/luma penalty as the PRODUCT white-sweep case (c05_over.mp4, clip-frac 0.516) -- neutral/normal qscore ratio 51.8x vs 45.5x. Texture & atmosphere is the ALLOWED subject matter for STOCK (sky/sunset, water/ocean, bokeh/light) and those are high-key by nature (sun, glare, foam, cloud-white), so the generic exposure metric would systematically nuke exactly the clips the category exists to fetch. A dim/dark night-city or concrete-texture clip does NOT trip the penalty (tested: luma 74-191, clip-frac 0.0) so neutralizing costs nothing there. Decision: STOCK is white_sweep."
+}

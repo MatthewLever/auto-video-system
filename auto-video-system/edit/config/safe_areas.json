@@ -1,0 +1,43 @@
+{
+  "resolution": [1080, 1920],
+  "retrieved_on": "2026-08-14",
+  "notes": "Insets in px on 1080x1920; content (esp. burned captions) must stay inside frame minus insets. Sources conflict; per-platform values are the conservative pick across sources. 'intersection' = max inset across platforms (cross-posting), 'engine_default' adds a 20px pad and is what caption presets use. IG ads with CTA reserve up to 672px bottom (35%) - ads only, not applied to organic captions.",
+  "platforms": {
+    "instagram_reels": {
+      "top": 220, "bottom": 420, "left": 70, "right": 120,
+      "ui": {"top": "Reels header/camera, follow chip", "bottom": "caption, audio row, engagement prompts", "right": "like/comment/share/save rail"},
+      "sources": [
+        {"url": "https://www.trymypost.com/blog/instagram-reels-safe-zones-2026", "date": "2026-01-24", "values": "bottom 420, right 100, top ~150"},
+        {"url": "https://adaptlypost.com/en/blog/social-media-safe-zones-2026-complete-guide", "date": "2024-12-17", "values": "top 210, bottom 310, right 84"},
+        {"url": "https://www.firstpier.com/resources/instagram-ad-safe-zones", "date": "2026-08-11", "values": "Meta unified 9:16 (2026-03): top 14%=270, bottom min 20%=384 (ads w/ CTA 35%=672), sides 6%=65"},
+        {"url": "https://kreatli.com/guides/instagram-reels-safe-zone", "date": "2026-02-01", "values": "qualitative: avoid bottom 20-25% (384-480)"}
+      ]
+    },
+    "tiktok": {
+      "top": 150, "bottom": 420, "left": 60, "right": 180,
+      "ui": {"top": "Following/For You tabs", "bottom": "caption block, audio row, progress bar", "right": "action rail incl. profile/follow"},
+      "sources": [
+        {"url": "https://creamate.ai/en/blog/tiktok-safe-zone-guide", "date": "2026-08-12", "values": "top 140, bottom 400, left 60, right 180"},
+        {"url": "https://adaptlypost.com/en/blog/social-media-safe-zones-2026-complete-guide", "date": "2024-12-17", "values": "top 108, bottom 320, left 60, right 120"},
+        {"url": "https://kreatli.com/guides/tiktok-safe-zone", "date": "2026-02-01", "values": "text safe area ~1080x1420 (500px combined vertical)"}
+      ]
+    },
+    "youtube_shorts": {
+      "top": 250, "bottom": 380, "left": 90, "right": 120,
+      "ui": {"top": "search/camera, notch variance", "bottom": "title, channel, subscribe, comment preview", "right": "like/dislike/share/remix stack"},
+      "sources": [
+        {"url": "https://www.youtubetoolkit.com/blog/youtube-shorts-dimensions", "date": "2026-07-12", "values": "conservative reconciled: 90 sides, 380 top, 380 bottom"},
+        {"url": "https://adaptlypost.com/en/blog/social-media-safe-zones-2026-complete-guide", "date": "2024-12-17", "values": "top 120, bottom 300, right 96"}
+      ]
+    },
+    "facebook_reels": {
+      "top": 270, "bottom": 420, "left": 70, "right": 120,
+      "ui": {"note": "derived from Meta unified 9:16 safe zone (March 2026) + IG organic parity"},
+      "sources": [
+        {"url": "https://www.firstpier.com/resources/instagram-ad-safe-zones", "date": "2026-08-11", "values": "Meta unified 9:16: top 270, bottom >=384, sides 65"}
+      ]
+    },
+    "intersection": {"top": 270, "bottom": 420, "left": 90, "right": 180},
+    "engine_default": {"top": 290, "bottom": 440, "left": 110, "right": 200}
+  }
+}

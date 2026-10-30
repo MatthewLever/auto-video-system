@@ -1,0 +1,10 @@
+{
+  "comment": "Brand terms whisper gets wrong. Loaded by captions.py. unigrams: lowercased bare word -> canonical. numbers: misheard -> correct, applied ONLY when the token is a bare price/number, because a wrong price on screen is worse than a wrong word.",
+  "unigrams": {
+    "lebron": "LeBron", "cheerios": "Cheerios", "youngsponge": "YoungSponge",
+    "iphone": "iPhone", "tiktok": "TikTok", "shopify": "Shopify",
+    "zellerfeld": "Zellerfeld", "sponge": "Sponge"
+  },
+  "bigrams": {"young sponge": "YoungSponge", "le bron": "LeBron"},
+  "numbers": {"70": "75", "$70": "$75", "seventy": "seventy-five"}
+}
